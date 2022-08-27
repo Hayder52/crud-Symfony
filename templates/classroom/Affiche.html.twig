@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border=2>
+    <tr>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Delete</th>
+    <th>update</th>
+    
+    </tr>
+    {% for C in classroom %}
+    <tr>
+    <td>{{ C.id }}</td>
+    <td>{{ C.name }}</td>
+    <td><a href="{{ path('delete' ,{'id': C.id }) }}">Delete</a></td>
+    <td><a href="{{ path('update' ,{'id': C.id }) }}">Update</a></td>
+
+
+    </tr>
+    {% endfor %}
+    
+    </table>
+</body>
+</html>
